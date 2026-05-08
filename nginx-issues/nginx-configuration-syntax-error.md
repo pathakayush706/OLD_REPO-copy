@@ -36,7 +36,7 @@ The output showed an invalid directive inside the Nginx configuration.
 
 ## 🖼️ Screenshot - Reload Failed
 
-![Nginx reload failed](../screenshots/nginx-configuration-syntax-error/nginx-reload-failed.png)
+![Nginx reload failed](../screenshots/nginx-issues/nginx-configuration-syntax-error/nginx-reload-failed.png)
 
 ---
 
@@ -60,7 +60,7 @@ This line caused Nginx syntax validation to fail.
 
 ## 🖼️ Screenshot - Syntax Error Evidence
 
-![Nginx syntax error evidence](../screenshots/nginx-configuration-syntax-error/nginx-test-shows-syntax-error.png)
+![Nginx syntax error evidence](../screenshots/nginx-issues/nginx-configuration-syntax-error/nginx-test-shows-syntax-error.png)
 
 ---
 
@@ -109,7 +109,7 @@ Successful response:
 
 ## 🖼️ Screenshot - Configuration Fixed
 
-![Nginx config fixed and verified](../screenshots/nginx-configuration-syntax-error/nginx-config-fixed-200-ok.png)
+![Nginx config fixed and verified](../screenshots/nginx-issues/nginx-configuration-syntax-error/nginx-config-fixed-200-ok.png)
 
 ---
 
