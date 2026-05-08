@@ -38,7 +38,7 @@ This confirmed that the request reached Nginx, but Nginx could not serve the req
 
 ## 🖼️ Screenshot - Before Fix
 
-![Nginx 403 Forbidden before fix](screenshots/nginx-403-forbidden-file-permission/before-403-forbidden.png)
+![Nginx 403 Forbidden before fix](../screenshots/nginx-issues/nginx-403-forbidden-file-permission/before-403-forbidden.png)
 
 ---
 
@@ -74,7 +74,7 @@ Nginx needs read permission to serve the file.
 
 ## 🖼️ Screenshot - Root Cause Evidence
 
-![Nginx index file permission issue](screenshots/nginx-403-forbidden-file-permission/permission-root-cause.png)
+![Nginx index file permission issue](../screenshots/nginx-issues/nginx-403-forbidden-file-permission/permission-root-cause.png)
 
 ---
 
@@ -120,7 +120,7 @@ This confirmed that Nginx was able to read and serve the index file successfully
 
 ## 🖼️ Screenshot - After Fix
 
-![Nginx HTTP 200 OK after fix](screenshots/nginx-403-forbidden-file-permission/after-200-ok.png)
+![Nginx HTTP 200 OK after fix](../screenshots/nginx-issues/nginx-403-forbidden-file-permission/after-200-ok.png)
 
 ---
 

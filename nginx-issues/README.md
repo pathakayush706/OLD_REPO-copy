@@ -99,9 +99,9 @@ Screenshot folders should be named after the incident.
 
 Example:
 
-    nginx-issues/screenshots/nginx-403-forbidden-file-permission/before-403-forbidden.png
-    nginx-issues/screenshots/nginx-403-forbidden-file-permission/permission-root-cause.png
-    nginx-issues/screenshots/nginx-403-forbidden-file-permission/after-200-ok.png
+    ../screenshots/nginx-issues/nginx-403-forbidden-file-permission/before-403-forbidden.png
+    ../screenshots/nginx-issues/nginx-403-forbidden-file-permission/permission-root-cause.png
+    ../screenshots/nginx-issues/nginx-403-forbidden-file-permission/after-200-ok.png
 
 ---
 

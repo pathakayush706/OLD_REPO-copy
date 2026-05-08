@@ -40,7 +40,7 @@ This showed that the web server was healthy locally, but remote access was block
 
 ## 🖼️ Screenshot - Remote Access Failing
 
-![Nginx remote access failing](screenshots/nginx-localhost-works-remote-access-fails/before-remote-access-fails.png)
+![Nginx remote access failing](../screenshots/nginx-issues/nginx-localhost-works-remote-access-fails/before-remote-access-fails.png)
 
 ---
 
@@ -72,7 +72,7 @@ The firewall rule showed that inbound HTTP traffic on port 80 was being dropped.
 
 ## 🖼️ Screenshot - Firewall Root Cause
 
-![Firewall blocking port 80](screenshots/nginx-localhost-works-remote-access-fails/firewall-port-80-blocked.png)
+![Firewall blocking port 80](../screenshots/nginx-issues/nginx-localhost-works-remote-access-fails/firewall-port-80-blocked.png)
 
 ---
 
@@ -114,7 +114,7 @@ Successful response:
 
 ## 🖼️ Screenshot - Remote Access Working
 
-![Nginx remote access working after firewall fix](screenshots/nginx-localhost-works-remote-access-fails/after-remote-access-works.png)
+![Nginx remote access working after firewall fix](../screenshots/nginx-issues/nginx-localhost-works-remote-access-fails/after-remote-access-works.png)
 
 ---
 

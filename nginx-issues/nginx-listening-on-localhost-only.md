@@ -53,7 +53,7 @@ Observed error:
 
 ## 🖼️ Screenshot - Remote Access Failed
 
-![Nginx remote access failed](screenshots/nginx-listening-on-localhost-only/before-remote-access-failed.png)
+![Nginx remote access failed](../screenshots/nginx-issues/nginx-listening-on-localhost-only/before-remote-access-failed.png)
 
 ---
 
@@ -75,7 +75,7 @@ Because of this, requests to the server IP address could not reach Nginx.
 
 ## 🖼️ Screenshot - Root Cause Evidence
 
-![Nginx listening only on 127.0.0.1](screenshots/nginx-listening-on-localhost-only/nginx-bound-to-127-0-0-1.png)
+![Nginx listening only on 127.0.0.1](../screenshots/nginx-issues/nginx-listening-on-localhost-only/nginx-bound-to-127-0-0-1.png)
 
 ---
 
@@ -146,7 +146,7 @@ Successful response:
 
 ## 🖼️ Screenshot - Remote Access Working
 
-![Nginx remote access working](screenshots/nginx-listening-on-localhost-only/after-listening-on-all-ipv4.png)
+![Nginx remote access working](../screenshots/nginx-issues/nginx-listening-on-localhost-only/after-listening-on-all-ipv4.png)
 
 ---
 
