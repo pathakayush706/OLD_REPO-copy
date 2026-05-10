@@ -54,12 +54,6 @@ Because the key permissions were too open, the SSH client ignored the key during
 
 ---
 
-## 🖼️ Screenshot - Root Cause Evidence
-
-![Private key permission root cause](../screenshots/ssh-issues/ssh-permission-denied-publickey/private-key-permission-root-cause.png)
-
----
-
 ## 🎯 Root Cause
 
 The root cause was incorrect permission on the SSH private key file.
