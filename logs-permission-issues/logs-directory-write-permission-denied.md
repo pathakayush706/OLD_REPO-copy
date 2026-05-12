@@ -8,7 +8,7 @@ The issue was caused by incorrect ownership on the log directory:
 
     /var/log/loglab
 
-The directory was owned by `root`, so the application user did not have write permission to create or update log files.
+The directory was owned by `root`, so the application user did not have write permission to create log files.
 
 ---
 
@@ -52,14 +52,9 @@ The directory was owned by `root`:
 
     drwxr-xr-x root root
 
-This means:
+This means only the directory owner had write permission.
 
-- Owner had read, write, and execute permission
-- Group had read and execute permission
-- Others had read and execute permission
-- Only the owner could create new files inside the directory
-
-Since the application user was not the owner, it could not create a new log file.
+Since the application user was not the owner, it could not create a new log file inside the directory.
 
 ---
 
@@ -75,7 +70,7 @@ Because of this, the application user `loglabuser` did not have write permission
 
     /var/log/loglab
 
-This caused log creation to fail with:
+This caused log file creation to fail with:
 
     Permission denied
 
@@ -93,7 +88,7 @@ Applied safe directory permission:
 
 Verified the updated directory permission:
 
-    ls -ld /var/log/loglab
+    sudo ls -ld /var/log/loglab
 
 Expected result:
 
@@ -107,19 +102,15 @@ Retested log file creation as the application user:
 
     sudo -u loglabuser touch /var/log/loglab/app-new.log
 
-Added a test log entry:
+Checked the created file as the application user:
 
-    sudo -u loglabuser sh -c 'echo "new log entry" >> /var/log/loglab/app-new.log'
+    sudo -u loglabuser ls -l /var/log/loglab/app-new.log
 
-Verified the log file content:
+Checked the directory permission:
 
-    sudo -u loglabuser tail -n 5 /var/log/loglab/app-new.log
+    sudo ls -ld /var/log/loglab
 
-Successful result:
-
-    new log entry
-
-This confirmed that the application user could create and write log files successfully.
+This confirmed that the application user could create log files successfully.
 
 ---
 
@@ -141,6 +132,7 @@ Create log directory:
 
 Create the issue:
 
+    sudo rm -f /var/log/loglab/app-new.log
     sudo chown root:root /var/log/loglab
     sudo chmod 755 /var/log/loglab
 
@@ -164,13 +156,13 @@ Verify log file creation:
 
     sudo -u loglabuser touch /var/log/loglab/app-new.log
 
-Write a test log entry:
+Check created log file:
 
-    sudo -u loglabuser sh -c 'echo "new log entry" >> /var/log/loglab/app-new.log'
+    sudo -u loglabuser ls -l /var/log/loglab/app-new.log
 
-Verify log content:
+Check fixed directory permission:
 
-    sudo -u loglabuser tail -n 5 /var/log/loglab/app-new.log
+    sudo ls -ld /var/log/loglab
 
 ---
 
@@ -200,4 +192,4 @@ The issue was resolved after correcting ownership and permission on `/var/log/lo
 
 Final verification:
 
-    new log entry
+    sudo -u loglabuser ls -l /var/log/loglab/app-new.log
