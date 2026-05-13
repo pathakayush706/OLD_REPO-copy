@@ -110,11 +110,18 @@ java -version
 
 SSH scenarios focus on remote access problems and service validation.
 
+Completed scenarios:
+
+| Scenario | What Happened |
+|---|---|
+| [SSH Permission Denied - Publickey](ssh-issues/ssh-permission-denied-publickey.md) | SSH server was reachable, but login failed because private key permissions were insecure |
+| [SSH Connection Refused - Service Down](ssh-issues/ssh-connection-refused-service-down.md) | SSH connection failed because the SSH service was stopped or port 22 was not listening |
+
 Common checks:
 
 ```bash
 systemctl status ssh
-ss -ltnp | grep ssh
+ss -ltnp | grep :22
 ssh localhost
 sudo tail -n 20 /var/log/auth.log
 ```
@@ -132,12 +139,19 @@ Skills practiced:
 
 Nginx scenarios focus on website access failures, port checks, service status, and configuration validation.
 
+Completed scenarios:
+
+| Scenario | What Happened |
+|---|---|
+| [Nginx 403 Forbidden - File Permission](nginx-issues/nginx-403-forbidden-file-permission.md) | Nginx was running, but the website returned 403 Forbidden because of file permission issues |
+| [Nginx Configuration Syntax Error](nginx-issues/nginx-configuration-syntax-error.md) | Nginx reload failed because of an invalid configuration syntax change |
+
 Common checks:
 
 ```bash
 systemctl status nginx
 curl -I http://localhost
-ss -ltnp | grep 80
+ss -ltnp | grep :80
 sudo nginx -t
 sudo tail -n 20 /var/log/nginx/error.log
 ```
