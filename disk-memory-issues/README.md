@@ -1,13 +1,14 @@
-# 💽 Disk & Memory Troubleshooting Scenarios
+# 💽 Disk and Memory Troubleshooting Scenarios
 
 [![Linux](https://img.shields.io/badge/Linux-Server%20Administration-orange?style=flat-square&logo=linux)](https://www.linux.org/)
-[![Disk](https://img.shields.io/badge/Disk-Space%20Issues-blue?style=flat-square&logo=linux)](#)
-[![Memory](https://img.shields.io/badge/Memory-Usage%20Issues-success?style=flat-square&logo=linux)](#)
+[![Disk](https://img.shields.io/badge/Disk-Space%20Troubleshooting-blue?style=flat-square&logo=linux)](#)
+[![Memory](https://img.shields.io/badge/Memory-Usage%20Analysis-success?style=flat-square&logo=linux)](#)
 [![Troubleshooting](https://img.shields.io/badge/Focus-Root%20Cause%20Analysis-purple?style=flat-square)](#)
 [![Status](https://img.shields.io/badge/Scenarios-2%20Production%20Cases-success?style=flat-square)](#)
 
-Disk & Memory Troubleshooting Scenarios is a production-style Linux administration section focused on common server resource issues.
-It demonstrates practical troubleshooting skills for disk space full errors, high memory usage, safe cleanup, process review, and clean post-fix verification.
+Disk and Memory Troubleshooting Scenarios is a production-style Linux administration section focused on common server resource issues.
+
+It demonstrates practical troubleshooting skills for disk space exhaustion, high memory usage, safe cleanup, process review, and clean post-fix verification.
 
 ## ✨ Highlights
 
@@ -23,8 +24,8 @@ It demonstrates practical troubleshooting skills for disk space full errors, hig
 
 | Incident | Scenario | Focus Area |
 |---|---|---|
-| [Disk Space Full](disk-space-full.md) | Application cannot write files because the filesystem is full | Disk usage, large files, cleanup |
-| [Memory Usage High](memory-usage-high.md) | Server becomes slow because memory usage is high | Memory usage, process check, recovery |
+| [Disk Space Full](disk-space-full.md) | Application could not write files because the filesystem was full | Disk usage, large files, cleanup |
+| [Memory Usage High](memory-usage-high.md) | Server became slow because memory usage was high | Memory usage, process check, recovery |
 
 ## 🏗️ Troubleshooting Coverage
 
@@ -46,9 +47,9 @@ This section covers the main layers involved in disk and memory incident handlin
 
 ### 3. Verification Layer
 
-- Re-test affected command
-- Confirm disk or memory status after fix
-- Validate the issue is no longer visible
+- Re-test the affected command
+- Confirm disk or memory status after the fix
+- Validate that the issue is no longer visible
 - Capture before and after evidence
 
 ## 🛠️ Commands Used
@@ -74,7 +75,7 @@ ls -lh /path/to/file
 ### Remove test or unwanted files
 
 ```bash
-rm /path/to/file
+rm -f /path/to/file
 ```
 
 ### Check memory usage
@@ -87,6 +88,12 @@ free -h
 
 ```bash
 top
+```
+
+### Check top memory-consuming processes
+
+```bash
+ps aux --sort=-%mem | head
 ```
 
 ## 📌 Scenario Breakdown
