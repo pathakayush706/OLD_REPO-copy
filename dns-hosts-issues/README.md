@@ -24,8 +24,8 @@ These scenarios use safe local test hostnames and avoid changing the real `local
 
 | Incident | Scenario | Focus Area |
 |---|---|---|
-| [Wrong Hosts File IP Entry](dns-hosts-wrong-ip-entry.md) | Application hostname points to the wrong IP address in `/etc/hosts` | Hosts file, wrong IP, curl failure |
-| [Missing Hosts File Entry](dns-hosts-missing-host-entry.md) | Internal hostname does not resolve because the hosts entry is missing | Hosts file, name resolution, hostname fix |
+| [Wrong Hosts File IP Entry](dns-wrong-hosts-entry.md) | Application hostname points to the wrong IP address in `/etc/hosts` | Hosts file, wrong IP, curl failure |
+| [Missing Hosts File Entry](dns-missing-hosts-entry.md) | Internal hostname does not resolve because the hosts entry is missing | Hosts file, name resolution, hostname fix |
 
 ## 🏗️ Troubleshooting Coverage
 
