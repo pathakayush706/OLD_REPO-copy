@@ -1,4 +1,3 @@
-````md
 <p align="center">
   <img src="assets/banner.svg" alt="LinuxOps Troubleshooting Lab" width="100%">
 </p>
@@ -367,4 +366,3 @@ Each section shows the issue, investigation, root cause, fix, verification, and 
 Created by **Aayush Pathak**
 
 Linux system administration and production troubleshooting practice.
-````
