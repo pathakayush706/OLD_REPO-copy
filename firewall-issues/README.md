@@ -31,7 +31,7 @@ The commands are intentionally simple, safe for a lab VM, and interview-friendly
 | Incident | Scenario | Focus Area |
 |---|---|---|
 | [HTTP Port 80 Blocked](firewall-http-port-blocked.md) | Nginx is running, but HTTP access fails because firewall blocks port `80` | firewall rules, port 80, Nginx access |
-| [App Port 8080 Blocked](firewall-app-port-8080-blocked.md) | A test application is running, but access fails because firewall blocks port `8080` | firewall rules, port 8080, app access |
+| [ICMP Ping Blocked](firewall-icmp-ping-blocked.md) | Ping fails because ICMP echo requests are blocked by firewall rules | firewall rules, ICMP, ping troubleshooting |
 
 ---
 
@@ -49,7 +49,7 @@ This section covers the main layers involved in firewall incident handling.
 
 - Confirm the required port is listening
 - Check port `80` for HTTP traffic
-- Check port `8080` for application traffic
+- Verify ICMP connectivity using ping
 
 ### 3. Firewall Layer
 
@@ -93,21 +93,17 @@ This section covers the main layers involved in firewall incident handling.
 
     sudo iptables -D INPUT -p tcp --dport 80 -j REJECT
 
-### Check port 8080
+### Test ICMP connectivity
 
-    ss -tulnp | grep :8080
+    ping -c 4 localhost
 
-### Test app access
+### Block ICMP ping for lab
 
-    curl http://localhost:8080
+    sudo iptables -I INPUT -p icmp --icmp-type echo-request -j DROP
 
-### Block app port 8080 for lab
+### Fix ICMP ping access
 
-    sudo iptables -I INPUT -p tcp --dport 8080 -j REJECT
-
-### Fix app port 8080 access
-
-    sudo iptables -D INPUT -p tcp --dport 8080 -j REJECT
+    sudo iptables -D INPUT -p icmp --icmp-type echo-request -j DROP
 
 ---
 
@@ -126,17 +122,17 @@ The investigation focuses on checking the service, checking the listening port, 
 - Nginx access verification
 - Root-cause explanation
 
-### 2. App Port 8080 Blocked
+### 2. ICMP Ping Blocked
 
-> The application was running on port `8080`, but access failed because firewall rules blocked the port.
+> Ping failed because ICMP echo requests were blocked by firewall rules.
 
-The investigation focuses on confirming that the app is listening on port `8080`, checking firewall rules, removing the block, and verifying access again.
+The investigation focuses on testing ICMP connectivity, checking firewall rules, removing the ICMP block, and verifying ping access again.
 
 **Skills demonstrated:**
 
-- Application port troubleshooting
+- ICMP troubleshooting
 - Firewall rule validation
-- Port 8080 access verification
+- Ping connectivity testing
 - Simple production-style investigation
 
 ---
