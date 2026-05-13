@@ -161,7 +161,7 @@ Completed scenarios:
 | Scenario | What Happened |
 |---|---|
 | [Wrong Hosts Entry](dns-hosts-issues/dns-wrong-hosts-entry.md) | Hostname pointed to the wrong IP address in `/etc/hosts` |
-| [Missing Hosts Entry](dns-hosts-issues/dns-missing-hosts-entry.md) | Hostname failed because the hosts entry was missing |
+| [Missing Hosts Entry](dns-hosts-issues/dns-hosts-missing-host-entry.md) | Hostname failed because the hosts entry was missing |
 
 Common checks:
 
