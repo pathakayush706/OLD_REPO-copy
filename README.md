@@ -1,3 +1,4 @@
+````md
 <p align="center">
   <img src="assets/banner.svg" alt="LinuxOps Troubleshooting Lab" width="100%">
 </p>
@@ -45,7 +46,7 @@ The goal is simple: identify the symptom, confirm the affected layer, find the r
 | 5 | Logs and Permission Issues | [logs-permission-issues](logs-permission-issues/) | Log read and write permission failures |
 | 6 | Disk and Memory Issues | [disk-memory-issues](disk-memory-issues/) | Disk full and high memory usage incidents |
 | 7 | Mounting and Fstab Issues | [mounting-fstab-issues](mounting-fstab-issues/) | Missing mount point and wrong filesystem type in `/etc/fstab` |
-| 8 | Tomcat Troubleshooting | [tomcat-troubleshooting](tomcat-troubleshooting/) | Tomcat service down and port 8080 conflict |
+| 8 | Tomcat Troubleshooting | [tomcat-troubleshooting](tomcat-troubleshooting/) | Tomcat startup failure and port 8080 conflict |
 
 ---
 
@@ -160,7 +161,7 @@ Completed scenarios:
 | Scenario | What Happened |
 |---|---|
 | [Wrong Hosts Entry](dns-hosts-issues/dns-wrong-hosts-entry.md) | Hostname pointed to the wrong IP address in `/etc/hosts` |
-| [Missing Hosts Entry](dns-hosts-issues/dns-hosts-missing-host-entry.md) | Hostname failed because the hosts entry was missing |
+| [Missing Hosts Entry](dns-hosts-issues/dns-missing-hosts-entry.md) | Hostname failed because the hosts entry was missing |
 
 Common checks:
 
@@ -337,11 +338,12 @@ Each scenario includes before and after screenshots stored under:
 screenshots/<topic-name>/<scenario-name>/
 ```
 
-Screenshot names follow this pattern:
+Most scenarios include:
 
 ```text
-<scenario-name>-before.png
-<scenario-name>-after.png
+before screenshot
+root-cause screenshot
+after/fixed screenshot
 ```
 
 This keeps every incident easy to review on GitHub.
@@ -365,3 +367,4 @@ Each section shows the issue, investigation, root cause, fix, verification, and 
 Created by **Aayush Pathak**
 
 Linux system administration and production troubleshooting practice.
+````
